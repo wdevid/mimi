@@ -6,12 +6,13 @@ import (
 	"html/template"
 )
 
-type MainController struct {
+type LoginControllers struct  {
 	beego.Controller
 }
 
-func (this *MainController) Get() {
-	tmpl, err := template.ParseFiles("./view/home.html")
+func (this *LoginControllers) GET()  {
+
+	tmpl, err := template.ParseFiles("./view/login.html")
 	if err != nil {
 		fmt.Println("Error happened..")
 	}
@@ -23,4 +24,9 @@ func (this *MainController) Get() {
 
 	liumiaocn := person{Id: 1001, Name: "liumiaocn", Country: "static/img/home.jpg"}
 	tmpl.Execute(this.Ctx.ResponseWriter,liumiaocn)
+
+	name := this.GetString("username","")
+	pd := this.GetString("password","")
+	fmt.Println(name,pd)
 }
+
