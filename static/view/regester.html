@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8">
+    <title>秘密登陆</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default " role="navigation" >
+    <div class="container-fluid"  style="width:1000px; margin:0 auto;">
+        <div>
+            <a class="navbar-brand" href="#"><img src={{.Country}}/></a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">心中所想</a>
+        </div>
+
+        <div class="container-fluid navbar-right">
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="container" style="width:300px; margin:200px auto;">
+    <form class="bs-example bs-example-form"  method="POST" action="/regester">
+        <br>
+        <div class="input-group form-group">
+            <input name="username" type="text" class="form-control" >
+            <span class="input-group-addon">账号</span>
+        </div>
+        <br>
+        <div class="input-group form-group">
+            <input name="password" type="password" class="form-control" >
+            <span class="input-group-addon">密码</span>
+        </div>
+        <br>
+        <br>
+        <button  type="submit" class="btn btn-primary"  style="width:272px;"
+                type="button"> 注册
+        </button>
+    </form>
+
+</div>
+
+</body>
+
+</html>

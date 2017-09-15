@@ -27,21 +27,21 @@
         </div>
     </div>
 </nav>
-<div class="container-fluid" method="GET" style="width:300px; margin:200px auto;">
-    <form id="regester" name="regester" class="bs-example bs-example-form" role="form" action="http:localhost:8080/login">
+<div class="container" style="width:300px; margin:200px auto;">
+    <form class="bs-example bs-example-form"  method="POST" action="/login">
         <br>
-        <div class="input-group">
-            <input id="username" type="text" class="form-control">
+        <div class="input-group form-group">
+            <input name="username" type="text" class="form-control" >
             <span class="input-group-addon">账号</span>
         </div>
         <br>
-        <div class="input-group">
-            <input id="password" type="text" class="form-control">
+        <div class="input-group form-group">
+            <input name="password" type="password" class="form-control" >
             <span class="input-group-addon">密码</span>
         </div>
         <br>
         <br>
-        <button id="fat-btn" class="btn btn-block btn-primary" type="submit"  style="width:272px;"
+        <button  type="submit" class="btn btn-primary"  style="width:272px;"
                 type="button"> 登陆
         </button>
     </form>

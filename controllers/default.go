@@ -11,7 +11,9 @@ type MainController struct {
 }
 
 func (this *MainController) Get() {
-	tmpl, err := template.ParseFiles("./view/home.html")
+	this.Data["IsLogin"] = CheckLogin(this.Ctx)
+	fmt.Println(CheckLogin(this.Ctx))
+	tmpl, err := template.ParseFiles("./static/view/home.html")
 	if err != nil {
 		fmt.Println("Error happened..")
 	}
