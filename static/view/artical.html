@@ -2,7 +2,7 @@
 <html >
 <head>
     <meta charset="utf-8">
-    <title>秘密登陆</title>
+    <title>秘密</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -12,7 +12,7 @@
 <nav class="navbar navbar-default " role="navigation" >
     <div class="container-fluid"  style="width:1000px; margin:0 auto;">
         <div>
-            <a class="navbar-brand" href="#"><img src={{.Country}}/></a>
+            <a class="navbar-brand" href="#"><img src="/img/home.jpg"/></a>
         </div>
         <div class="navbar-header">
             <a class="navbar-brand" href="#">心中所想</a>
@@ -27,24 +27,14 @@
         </div>
     </div>
 </nav>
-<div class="container" style="width:300px; margin:200px auto;">
-    <form class="bs-example bs-example-form"  method="POST" action="/regester">
-        <br>
-        <div class="input-group form-group">
-            <input name="username" type="text" maxlength="16" minlength="3" class="form-control" >
-            <span class="input-group-addon">账号</span>
-        </div>
-        <br>
-        <div class="input-group form-group">
-            <input name="password" type="password"  maxlength="16" minlength="3" class="form-control" >
-            <span class="input-group-addon">密码</span>
-        </div>
-        <br>
-        <br>
+<div class="container" style="width:800px; margin:50px auto;">
+    <form class="bs-example bs-example-form" method="post" action="/addartical"  align="center">
+        <input name="contentname"  placeholder="请输入标题" type="text" maxlength="128" minlength="10"  style="width:400px;color: rgb(0, 0, 0); font-size: 26px; font-family: 微软雅黑; font-weight: normal; ">
+        <textarea name="content" maxlength="5000"minlength="20" style="width:800px;height: 400px;margin-top: 20px"></textarea>
         <button  type="submit" class="btn btn-primary"  style="width:272px;"
-        ><a href="/login"> </a>注册</button>
-
+        ><a href="/login"> </a>发布秘密</button>
     </form>
+
 
 </div>
 

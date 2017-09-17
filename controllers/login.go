@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"html/template"
 	"github.com/astaxie/beego/orm"
-	"samples/mimi/models"
+	"mimi/models"
 	"github.com/astaxie/beego/context"
 )
 

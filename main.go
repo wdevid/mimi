@@ -2,9 +2,9 @@ package main
 
 import (
 	"github.com/astaxie/beego"
-	"samples/mimi/controllers"
+	"mimi/controllers"
 	"github.com/astaxie/beego/orm"
-	"samples/mimi/models"
+	"mimi/models"
 	_ "github.com/go-sql-driver/mysql"
 )
 
