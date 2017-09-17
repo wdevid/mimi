@@ -11,7 +11,6 @@ var (
 	globalnum int
 )
 
-
 func init() {
 	globalnum = 100000000
 }
