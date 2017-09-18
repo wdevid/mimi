@@ -17,17 +17,34 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="#">心中所想</a>
         </div>
+
         <div class="container-fluid navbar-right">
-            {{if.IsLogin}}
-            <ul class="nav navbar-nav ">
-                <li><a href="/login"><span class="glyphicon glyphicon-user"></span> 退出登录</a></li>
-            </ul>
-            {{else}}
-            <ul class="nav navbar-nav ">
-                <li><a href="/regester"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
-                <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
-            </ul>
-            {{end}}
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown">个人中心
+                    <span class="caret"></span>
+                </button>
+                <ul class=" dropdown-menu" role="menu">
+                    {{if.IsLogin}}
+                    <li><a href="/loginout"><span class="glyphicon glyphicon-user"></span> 退出登录</a></li>
+                    {{else}}
+                    <ul >
+                        <li><a href="/regester"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+                        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+                    </ul>
+                    {{end}}
+                    <ul>
+                        {{if.IsLogin}}
+                        <li><a href="/addartical"><span class="glyphicon glyphicon-log-in"></span> 写秘密</a></li>
+                        {{end}}
+                    </ul>
+                    <ul>
+                        {{if.IsLogin}}
+                        <li><a href="/myartical"><span class="glyphicon glyphicon-log-in"></span> 我得秘密</a></li>
+                        {{end}}
+                    </ul>
+                </ul>
+            </div>
             <form class="navbar-form navbar-right" role="search">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search">
@@ -39,14 +56,16 @@
     </div>
 </nav>
 <div class="container-fluid" style="width:700px; margin:100px auto;">
-    <ul class="list-group">
-        <li class="list-group-item">免费域名注册</li>
-        <li class="list-group-item">免费 Window 空间托管</li>
-        <li class="list-group-item">图像的数量</li>
-        <li class="list-group-item">
-            <span class="badge"><h8>收藏</h8></span>
-            24*7 支持
-        </li>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    带有 title 的面板标题
+                </h3>
+            </div>
+            <div class="panel-body">
+                面板内容
+            </div>
+        </div>
     </ul>
     <ul class="pager">
         <li class="previous"><a href="#">&larr; Older</a></li>

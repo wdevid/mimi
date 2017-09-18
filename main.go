@@ -18,5 +18,9 @@ func main() {
 	beego.Router("/", &controllers.MainController{})
 	beego.Router("/login", &controllers.LoginController{})
 	beego.Router("/regester", &controllers.RegesterController{})
+	beego.Router("/addartical", &controllers.AddArticalController{})
+	beego.Router("/loginout", &controllers.LoginOutController{})
+	beego.Router("/myartical", &controllers.MyArticalController{})
+
 	beego.Run()
 }

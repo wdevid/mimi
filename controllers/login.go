@@ -18,24 +18,11 @@ func (this *LoginController) Get()  {
 	if err != nil {
 		fmt.Println("Error happened..")
 	}
-	tmpl.Execute(this.Ctx.ResponseWriter,nil)
-	//this.TplName = "./view/login.html"
-	//tmpl, err := template.ParseFiles("./view/login.html")
-	//if err != nil {
-	//	fmt.Println("Error happened..")
-	//}
-	//type person struct {
-	//	Id      int
-	//	Name    string
-	//	Country string
-	//}
-	//
-	//liumiaocn := person{Id: 1001, Name: "liumiaocn", Country: "static/img/home.jpg"}
-	//tmpl.Execute(this.Ctx.ResponseWriter,liumiaocn)
-	//
-	//name := this.GetString("username","")
-	//pd := this.GetString("password","")
-	//fmt.Println(name,pd)
+	type imgpath struct {
+		Path string
+	}
+	p:= imgpath{Path:"static/img/home.jpg"}
+	tmpl.Execute(this.Ctx.ResponseWriter,p)
 }
 func (this *LoginController) Post()  {
 	o:=orm.NewOrm()

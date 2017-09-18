@@ -17,7 +17,11 @@ func (this *RegesterController) Get()  {
 	if err != nil {
 		fmt.Println("Error happened..")
 	}
-	tmpl.Execute(this.Ctx.ResponseWriter,nil)
+	type imgpath struct {
+		Path string
+	}
+	p:= imgpath{Path:"static/img/home.jpg"}
+	tmpl.Execute(this.Ctx.ResponseWriter,p)
 
 }
 
@@ -30,7 +34,7 @@ func (this *RegesterController) Post() {
 	u.UserName = uname
 	u.PassWord = pwd
 	fmt.Println(o.Insert(u))
-
+	this.Redirect("/login",301)
 	return ;
 }
 

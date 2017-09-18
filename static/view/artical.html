@@ -12,10 +12,10 @@
 <nav class="navbar navbar-default " role="navigation" >
     <div class="container-fluid"  style="width:1000px; margin:0 auto;">
         <div>
-            <a class="navbar-brand" href="#"><img src="/img/home.jpg"/></a>
+            <a class="navbar-brand" href="/"><img src={{.Path}}/></a>
         </div>
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">心中所想</a>
+            <a class="navbar-brand" href="/">心中所想</a>
         </div>
 
         <div class="container-fluid navbar-right">
@@ -29,12 +29,11 @@
 </nav>
 <div class="container" style="width:800px; margin:50px auto;">
     <form class="bs-example bs-example-form" method="post" action="/addartical"  align="center">
-        <input name="contentname"  placeholder="请输入标题" type="text" maxlength="128" minlength="10"  style="width:400px;color: rgb(0, 0, 0); font-size: 26px; font-family: 微软雅黑; font-weight: normal; ">
+        <input name="title"  placeholder="请输入标题" type="text" maxlength="128" minlength="10"  style="width:400px;color: rgb(0, 0, 0); font-size: 26px; font-family: 微软雅黑; font-weight: normal; ">
         <textarea name="content" maxlength="5000"minlength="20" style="width:800px;height: 400px;margin-top: 20px"></textarea>
         <button  type="submit" class="btn btn-primary"  style="width:272px;"
-        ><a href="/login"> </a>发布秘密</button>
+        ><a href="/"> </a>发布秘密</button>
     </form>
-
 
 </div>
 
