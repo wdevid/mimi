@@ -31,9 +31,10 @@
     {{range.Cuss}}
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title"><a href="seeartical.html?id={{.Id}}">
+            <h3 class="panel-title"><a style="background-color: #bbffdd" href="seeartical.html?id={{.Id}}">
                 {{.Title}}</a>
             </h3>
+            <span  style="float: right;margin-top: -7px"><a href="/deleteartical?id={{.Id}}">删除</a></span>
         </div>
         <div class="panel-body">
             {{.Content}}

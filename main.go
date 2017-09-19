@@ -23,6 +23,7 @@ func main() {
 	beego.Router("/myartical", &controllers.MyArticalController{})
 	beego.Router("/seeartical", &controllers.SeeArticalController{})
 	beego.Router("/search", &controllers.SearchController{})
+	beego.Router("/deleteartical", &controllers.DeleteController{})
 
 	beego.Run()
 }

@@ -34,6 +34,7 @@ func (this *LoginController) Post()  {
 	fmt.Println(user)
 	if len(user)==0 {
 		this.Ctx.WriteString("登陆失败")
+		this.Redirect("/",301)
 	}else {
 		maxAge := 1<<31-1
 		this.Ctx.SetCookie("uname",uname,maxAge,"/")
