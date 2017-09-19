@@ -61,7 +61,10 @@ func CheckLogin(ctx *context.Context) bool {
 	}
 	pwd := pk.Value
 	o.Raw("select user_name,pass_word from user where user_name=? and pass_word=?",uname,pwd).QueryRows(&user)
-	if len(user) == 0 {
+	cname:=ctx.GetCookie("uname")
+	cpwd:=ctx.GetCookie("pwd")
+	fmt.Println(cname)
+	if len(user) == 0 &&cname!=uname&&cpwd!=pwd{
 		return false
 	}else{
 		return true

@@ -27,13 +27,20 @@
         </div>
     </div>
 </nav>
-<div class="container" style="width:800px; margin:50px auto;">
-    <form class="bs-example bs-example-form" method="post" action="/addartical"  align="center">
-        <input name="title"  placeholder="请输入标题" type="text" maxlength="128" minlength="5"  style="width:400px;color: rgb(0, 0, 0); font-size: 26px; font-family: 微软雅黑; font-weight: normal; ">
-        <textarea name="content" maxlength="5000"minlength="10" style="width:800px;height: 400px;margin-top: 20px"></textarea>
-        <button  type="submit" class="btn btn-primary"  style="width:272px;"
-        ><a href="/"> </a>发布秘密</button>
-    </form>
+<div class="container-fluid" style="width:700px; margin:100px auto;">
+    {{range.Cuss}}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><a href="seeartical.html?id={{.Id}}">
+                {{.Title}}</a>
+            </h3>
+        </div>
+        <div class="panel-body">
+            {{.Content}}
+        </div>
+    </div>
+    {{end}}
+    </ul>
 
 </div>
 

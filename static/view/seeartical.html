@@ -2,7 +2,7 @@
 <html >
 <head>
     <meta charset="utf-8">
-    <title>秘密</title>
+    <title>我的秘密</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -27,14 +27,14 @@
         </div>
     </div>
 </nav>
-<div class="container" style="width:800px; margin:50px auto;">
-    <form class="bs-example bs-example-form" method="post" action="/addartical"  align="center">
-        <input name="title"  placeholder="请输入标题" type="text" maxlength="128" minlength="5"  style="width:400px;color: rgb(0, 0, 0); font-size: 26px; font-family: 微软雅黑; font-weight: normal; ">
-        <textarea name="content" maxlength="5000"minlength="10" style="width:800px;height: 400px;margin-top: 20px"></textarea>
-        <button  type="submit" class="btn btn-primary"  style="width:272px;"
-        ><a href="/"> </a>发布秘密</button>
-    </form>
-
+<div class="container-fluid" style="width:700px; margin:100px auto;">
+    {{range .Cuss}}
+    <div class="page-header">
+        <h1>{{.Title}}
+        </h1>
+    </div>
+    <p> {{.Content}}</p>
+    {{end}}
 </div>
 
 </body>

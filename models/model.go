@@ -49,6 +49,7 @@ type Customer struct {
 	ReplyCount      int64
 	ReplyLastUserId int64
 	Public          int64
+	Uname  string
 }
 
 func RegisterDB() {

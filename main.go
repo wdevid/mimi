@@ -21,6 +21,8 @@ func main() {
 	beego.Router("/addartical", &controllers.AddArticalController{})
 	beego.Router("/loginout", &controllers.LoginOutController{})
 	beego.Router("/myartical", &controllers.MyArticalController{})
+	beego.Router("/seeartical", &controllers.SeeArticalController{})
+	beego.Router("/search", &controllers.SearchController{})
 
 	beego.Run()
 }

@@ -15,39 +15,37 @@
             <a class="navbar-brand" href="/"><img src={{.Country}}/></a>
         </div>
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">心中所想</a>
+            <a class="navbar-brand" href="/">心中所想</a>
         </div>
 
         <div class="container-fluid navbar-right">
 
             <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown">个人中心
+                <button type="button" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown"
+                        style="background-color: antiquewhite"><a href="myartical.html">个人中心</a>
                     <span class="caret"></span>
                 </button>
-                <ul class=" dropdown-menu" role="menu">
+                <ul class=" dropdown-menu" role="menu" style="background-color: antiquewhite">
                     {{if.IsLogin}}
-                    <li><a href="/loginout"><span class="glyphicon glyphicon-user"></span> 退出登录</a></li>
+                    <li><a href="/myartical"><span class="glyphicon glyphicon-user"></span> {{.Name}}</a></li>
+                    <li><a href="/loginout"><span class="glyphicon glyphicon glyphicon-log-out"></span> 退出登录</a></li>
                     {{else}}
-                    <ul >
-                        <li><a href="/regester"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
-                        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
-                    </ul>
+                    <li><a href="/regester"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+
                     {{end}}
-                    <ul>
-                        {{if.IsLogin}}
-                        <li><a href="/addartical"><span class="glyphicon glyphicon-log-in"></span> 写秘密</a></li>
-                        {{end}}
-                    </ul>
-                    <ul>
-                        {{if.IsLogin}}
-                        <li><a href="/myartical"><span class="glyphicon glyphicon-log-in"></span> 我得秘密</a></li>
-                        {{end}}
-                    </ul>
+                    {{if.IsLogin}}
+                    <li><a href="/addartical"><span class="glyphicon glyphicon glyphicon-edit"></span> 写秘密</a></li>
+                    {{end}}
+
+                    {{if.IsLogin}}
+                    <li><a href="/myartical"><span class="glyphicon glyphicon glyphicon-glass"></span> 我得秘密</a></li>
+                    {{end}}
                 </ul>
             </div>
-            <form class="navbar-form navbar-right" role="search">
+            <form class="navbar-form navbar-right" role="search" method="get" action="/search">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+                    <input type="text" name="search" class="form-control" placeholder="Search">
                 </div>
             </form>
         </div>
@@ -56,22 +54,21 @@
     </div>
 </nav>
 <div class="container-fluid" style="width:700px; margin:100px auto;">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">
-                    带有 title 的面板标题
-                </h3>
-            </div>
-            <div class="panel-body">
-                面板内容
-            </div>
+    {{range.Cuss}}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <a href="/seeartical?id={{.Id}}">{{.Title}}</a>
+            </h3>
         </div>
+        <div class="panel-body"href="/seeartical?id={{.Id}}">
+            {{.Content}}
+        </div>
+    </div>
+    {{end}}
     </ul>
-    <ul class="pager">
-        <li class="previous"><a href="#">&larr; Older</a></li>
-        <li class="next"><a href="#">Newer &rarr;</a></li>
-    </ul>
-</div>
-</body>
 
+</div>
+
+</body>
 </html>

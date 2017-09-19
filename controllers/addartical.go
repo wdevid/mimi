@@ -30,15 +30,24 @@ func (this *AddArticalController) Post() {
 		o:=orm.NewOrm()
 		o.Using("user")
 		var user []models.User
-		uname := this.GetSession("uname")
+		ck,err :=this.Ctx.Request.Cookie("uname")
+		if  err != nil{
+		}
+		uname := ck.Value
+
 		o.Raw("select Id from user where user_name=?",uname).QueryRows(&user)
 		cus := new(models.Customer)
 		cus.Content = this.Input().Get("content")
 		cus.Title = this.Input().Get("title")
+		fmt.Println(user)
 		cus.Uid = user[0].Id
+		cus.Uname = uname
 		cus.Created = time.Now()
+		cus.Updated = time.Now()
+		cus.ReplyTime = time.Now()
 		o.Using("customer")
 		o.Insert(cus)
+		this.Redirect("/",301)
 	}else {
 		this.Redirect("/login",301)
 	}
