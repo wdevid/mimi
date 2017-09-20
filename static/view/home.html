@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>秘密</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>秘密</title>
 </head>
 <body>
 
@@ -21,27 +21,31 @@
         <div class="container-fluid navbar-right">
 
             <div class="btn-group">
+                {{if.IsLogin}}
                 <button type="button" class="btn btn-default dropdown-toggle btn-lg" data-toggle="dropdown"
-                        style="background-color: antiquewhite"><a href="myartical.html">个人中心</a>
+                        style="background-color: antiquewhite">个人中心
                     <span class="caret"></span>
                 </button>
                 <ul class=" dropdown-menu" role="menu" style="background-color: antiquewhite">
                     {{if.IsLogin}}
                     <li><a href="/myartical"><span class="glyphicon glyphicon-user"></span> {{.Name}}</a></li>
                     <li><a href="/loginout"><span class="glyphicon glyphicon glyphicon-log-out"></span> 退出登录</a></li>
-                    {{else}}
-                    <li><a href="/regester"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
-                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
 
-                    {{end}}
-                    {{if.IsLogin}}
                     <li><a href="/addartical"><span class="glyphicon glyphicon glyphicon-edit"></span> 写秘密</a></li>
-                    {{end}}
 
-                    {{if.IsLogin}}
                     <li><a href="/myartical"><span class="glyphicon glyphicon glyphicon-glass"></span> 我得秘密</a></li>
                     {{end}}
                 </ul>
+                {{else}}
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default  btn-lg"
+                            style="background-color: antiquewhite"><a href="/login">登陆</a>
+                    </button>
+                    <button type="button" class="btn btn-default  btn-lg"
+                            style="background-color: antiquewhite"><a href="/regester">注册</a>
+                    </button>
+                </div>
+                {{end}}
             </div>
             <form class="navbar-form navbar-right" role="search" method="get" action="/search">
                 <div class="form-group">
@@ -61,7 +65,7 @@
                 <a style="background-color: #bbffdd" href="/seeartical?id={{.Id}}">{{.Title}}</a>
             </h3>
         </div>
-        <div class="panel-body"href="/seeartical?id={{.Id}}">
+        <div class="panel-body" href="/seeartical?id={{.Id}}">
             {{.Content}}
         </div>
     </div>

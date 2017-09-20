@@ -21,7 +21,7 @@ func (this *MainController) Get() {
 	o := orm.NewOrm()
 	o.Using("customer")
 	var cuss []models.Customer
-	o.QueryTable("customer").All(&cuss)
+	o.QueryTable("customer").OrderBy("-id").All(&cuss)
 	type person struct {
 		Id      int
 		Name    string
