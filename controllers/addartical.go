@@ -52,3 +52,5 @@ func (this *AddArticalController) Post() {
 		this.Redirect("/login",301)
 	}
 }
+
+

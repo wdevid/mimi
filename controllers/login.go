@@ -30,6 +30,10 @@ func (this *LoginController) Post()  {
 	var user []models.User
 	uname := this.Input().Get("username")
 	pwd := this.Input().Get("password")
+	if uname == ""||pwd == "" {
+		this.Ctx.WriteString("用户名或者密码不能为空")
+		return
+	}
 	o.Raw("select user_name,pass_word from user where user_name=? and pass_word=?",uname,pwd).QueryRows(&user)
 	fmt.Println(user)
 	if len(user)==0 {

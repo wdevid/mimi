@@ -22,7 +22,7 @@ func (this *SearchController)Get()  {
 	o := orm.NewOrm()
 	o.Using("customer")
 	var cuss []models.Customer
-	o.QueryTable("customer").Filter("content__contains",con).All(&cuss)
+	o.QueryTable("customer").OrderBy("-id").Filter("content__contains",con).All(&cuss)
 	type person struct {
 		Id      int
 		Name    string

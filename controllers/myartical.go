@@ -29,7 +29,7 @@ func (this *MyArticalController) Get() {
 
 	o.Using("customer")
 	var cuss [] models.Customer
-	o.QueryTable("customer").Filter("uname",articals.UserName).All(&cuss)
+	o.QueryTable("customer").OrderBy("-id").Filter("uname",articals.UserName).All(&cuss)
 	fmt.Println(cuss)
 	if len(cuss) > 0 {
 		p := imgpath{Path: "static/img/home.jpg",Cuss:cuss}
